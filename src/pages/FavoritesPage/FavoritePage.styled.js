@@ -18,3 +18,9 @@ export const Title = styled.h2`
   line-height: 2;
   margin: 50px 0;
 `;
+export const CenteredMessage = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

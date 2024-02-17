@@ -3,7 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import CarCard from "../../components/CarCard/CarCard";
 import { selectFavorites } from "../../redux/Cars/selectors";
 import { removeFavorite } from "../../redux/Cars/favoritesSlice";
-import { CarsWrapper, StyledFavorite, Title } from "./FavoritePage.styled";
+import {
+  CarsWrapper,
+  CenteredMessage,
+  StyledFavorite,
+  Title,
+} from "./FavoritePage.styled";
 
 const FavoritesPage = () => {
   const dispatch = useDispatch();
@@ -15,7 +20,6 @@ const FavoritesPage = () => {
 
   return (
     <StyledFavorite>
-      <Title>Your favorite cars!</Title>
       <CarsWrapper>
         {favorites.length > 0 ? (
           favorites.map((car) => (
@@ -27,7 +31,9 @@ const FavoritesPage = () => {
             />
           ))
         ) : (
-          <p>You don't have any favorite cars yet.</p>
+          <CenteredMessage>
+            <Title>You don't have any favorite cars yet.</Title>
+          </CenteredMessage>
         )}
       </CarsWrapper>
     </StyledFavorite>

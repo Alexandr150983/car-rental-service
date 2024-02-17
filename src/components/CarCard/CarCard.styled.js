@@ -72,17 +72,3 @@ export const LearnMoreButton = styled.button`
     background-color: rgb(11, 68, 205);
   }
 `;
-
-// export const ModalContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `;
-
-// export const CarImageModal = styled.img`
-//   border-radius: 12px;
-//   margin-bottom: 14px;
-//   width: 461px;
-//   height: 248px;
-//   object-fit: cover;
-// `;

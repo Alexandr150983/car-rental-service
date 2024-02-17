@@ -69,7 +69,7 @@ const CarCard = ({ car, onFavoriteToggle, isFavorite }) => {
       </CardContent>
       <LearnMoreButton onClick={toggleModal}>Learn more</LearnMoreButton>
       <Modal isOpen={isModalOpen} onClose={toggleModal}>
-        <CarDetailsModal />
+        <CarDetailsModal car={car} />
       </Modal>
     </Card>
   );
