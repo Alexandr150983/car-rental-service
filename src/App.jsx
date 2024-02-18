@@ -1,19 +1,24 @@
-import { Route, Routes } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/layout";
 import { CATALOG, FAVORITES, HOME } from "./constants/routes";
-import CatalogPage from "./pages/CatalogPage/CatalogPage";
-import HomePage from "./pages/HomePage/HomePage";
-import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
+import Loader from "./components/Loader/Loader";
+
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
 
 export const App = () => {
   return (
     <Layout>
-      <Routes>
-        <Route path={HOME} element={<HomePage />} />
-        <Route path={CATALOG} element={<CatalogPage />} />
-        <Route path={FAVORITES} element={<FavoritesPage />} />
-        <Route path="*" element={<HomePage />} />
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path={HOME} element={<HomePage />} />
+          <Route path={CATALOG} element={<CatalogPage />} />
+          <Route path={FAVORITES} element={<FavoritesPage />} />
+          <Route path="*" element={<Navigate replace to={HOME} />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 };

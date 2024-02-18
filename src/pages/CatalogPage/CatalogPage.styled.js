@@ -13,6 +13,7 @@ export const CarsWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 50px;
   margin-bottom: 88px;
+  padding-top: 50px;
 `;
 
 export const LoadBtn = styled.button`
@@ -34,4 +35,12 @@ export const LoadBtn = styled.button`
   &:hover {
     color: rgb(11, 68, 205);
   }
+`;
+
+export const CenteredLoader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 `;

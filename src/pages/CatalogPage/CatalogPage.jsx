@@ -9,7 +9,13 @@ import {
 } from "../../redux/Cars/selectors";
 import { addFavorite, removeFavorite } from "../../redux/Cars/favoritesSlice";
 import CarCard from "../../components/CarCard/CarCard";
-import { CarsWrapper, LoadBtn, StyledCatalog } from "./CatalogPage.styled";
+import {
+  CarsWrapper,
+  CenteredLoader,
+  LoadBtn,
+  StyledCatalog,
+} from "./CatalogPage.styled";
+import Loader from "../../components/Loader/Loader";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -52,22 +58,32 @@ const CatalogPage = () => {
   };
   return (
     <StyledCatalog>
-      {loading && <p>Завантаження...</p>}
-      {error && <p>Помилка: {error}</p>}
-      <CarsWrapper>
-        {cars.map((car) => (
-          <CarCard
-            key={car.id}
-            car={car}
-            onFavoriteToggle={handleFavoriteToggle}
-            isFavorite={favorites.some((favorite) => favorite.id === car.id)}
-          />
-        ))}
-      </CarsWrapper>
-      {hasMore && (
-        <LoadBtn type="button" onClick={handleLoadMore}>
-          Load more
-        </LoadBtn>
+      {loading && (
+        <CenteredLoader>
+          <Loader />
+        </CenteredLoader>
+      )}
+      {!loading && (
+        <>
+          {error && <p>Error: {error}</p>}
+          <CarsWrapper>
+            {cars.map((car) => (
+              <CarCard
+                key={car.id}
+                car={car}
+                onFavoriteToggle={handleFavoriteToggle}
+                isFavorite={favorites.some(
+                  (favorite) => favorite.id === car.id
+                )}
+              />
+            ))}
+          </CarsWrapper>
+          {hasMore && (
+            <LoadBtn type="button" onClick={handleLoadMore}>
+              Load more
+            </LoadBtn>
+          )}
+        </>
       )}
     </StyledCatalog>
   );

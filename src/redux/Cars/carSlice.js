@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars } from "../../services/carApi"; 
+import { fetchCars } from "../../services/carApi";
 
 const initialState = {
   items: [],

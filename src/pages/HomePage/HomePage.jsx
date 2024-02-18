@@ -1,11 +1,16 @@
 import React from "react";
+import { Paragraph, StyledContainer, TextContainer, Title } from "./HomePage.styled";
 
 function HomePage() {
   return (
-    <div>
-      <h1>Ласкаво просимо до сервісу оренди автомобілів</h1>
-      <p>Тут ви знайдете широкий вибір автомобілів на будь-який смак.</p>
-    </div>
+    <StyledContainer>
+      <TextContainer>
+      <Title>Welcome to the car rental service</Title>
+      <Paragraph>
+        Here you will find a wide selection of cars for every taste.
+      </Paragraph>
+    </TextContainer></StyledContainer>
+
   );
 }
 

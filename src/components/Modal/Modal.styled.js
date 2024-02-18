@@ -15,17 +15,22 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
   padding: 40px;
   border-radius: 24px;
   background-color: white;
   max-width: 541px;
   max-height: 752px;
-  height: 80vh;
+  height: 90vh;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 `;
 
 export const ModalContent = styled.div``;

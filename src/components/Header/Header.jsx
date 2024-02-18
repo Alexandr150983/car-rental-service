@@ -11,7 +11,7 @@ const Header = () => {
           Home
         </StyledNavLink>
         <StyledNavLink as={NavLink} to={CATALOG}>
-          Catalogue
+          Catalog
         </StyledNavLink>
         <StyledNavLink as={NavLink} to={FAVORITES}>
           Favourite
