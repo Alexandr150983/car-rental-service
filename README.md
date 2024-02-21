@@ -1,21 +1,21 @@
 # Car Rental Service
 
-## Опис
+## Description
 
-Цей проект є веб-застосунком для компанії, що надає послуги автомобілів в оренду в Україні. Він дозволяє користувачам переглядати каталог доступних автомобілів, додавати обрані автомобілі до улюблених, а також отримувати детальну інформацію про умови оренди.
+This project is a web application for a car rental company in Ukraine. It allows users to view the catalog of available cars, add the selected cars to their favorites, and also get detailed information about the rental conditions.
 
-## Початок роботи
+## Getting Started
 
-### Передумови
+### Prerequisites
 
-Перш ніж почати, вам потрібно встановити наступне програмне забезпечення на ваш комп'ютер:
+Before you begin, you need to install the following software on your computer:
 
-- Node.js версії 12 або вище
+- Node.js versions 12 or higher
 - Git
 
-### Встановлення
+### Installation
 
-Щоб запустити проект локально, виконайте наступні кроки:
+To run the project locally, follow these steps:
 
 ```bash
 git clone https://github.com/Alexandr150983/car-rental-service.git
@@ -23,21 +23,22 @@ cd car-rental-service
 npm install
 npm start
 
-# Використані технології
+# Technologies used
 
-- [React](https://reactjs.org/) - для створення користувацького інтерфейсу
-- [Redux](https://redux.js.org/) - для управління станом додатку
-- [Axios](https://axios-http.com/) - для виконання HTTP-запитів до API
-- [MockAPI](https://mockapi.io/) - для створення макету бекенду для розробки
+- [React](https://reactjs.org/) - to create a user interface
+- [Redux](https://redux.js.org/) - to manage the state of the application
+- [Axios](https://axios-http.com/) - to make HTTP requests to the API
+- [MockAPI](https://mockapi.io/) - to create a backend layout for development
 
-# Функціонал проекту
+# Functionality of the project
 
-- Перегляд каталогу доступних автомобілів для оренди.
-- Додавання автомобілів до списку улюблених.
-- Детальний перегляд інформації про умови оренди автомобілів.
 
-# Автор
+- Browse the catalog of available cars for rent.
+- Adding cars to the list of favorites.
+- Detailed review of information about car rental conditions.
 
-Федоренко О.І.
+# Author
+
+Fedorenko Oleksandr
 
 ```
