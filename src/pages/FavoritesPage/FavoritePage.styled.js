@@ -6,7 +6,7 @@ export const StyledFavorite = styled.section`
   margin-left: auto;
   margin-right: auto;
 `;
-export const CarsWrapper = styled.div`
+export const CarsWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 50px;

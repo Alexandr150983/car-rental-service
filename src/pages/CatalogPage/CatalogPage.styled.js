@@ -8,7 +8,7 @@ export const StyledCatalog = styled.section`
   margin-right: auto;
 `;
 
-export const CarsWrapper = styled.div`
+export const CarsWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-row-gap: 50px;
