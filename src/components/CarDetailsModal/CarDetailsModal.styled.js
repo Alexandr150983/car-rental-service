@@ -19,7 +19,6 @@ export const Model = styled.span`
 
 export const TitleOptions = styled.div`
   width: 461px;
-  height: 126px;
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
@@ -80,7 +79,6 @@ export const Title = styled.h3`
 
 export const RentalConditionsContainer = styled.div`
   width: 461px;
-  height: 100px;
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
@@ -109,12 +107,11 @@ export const NumericValue = styled.span`
 `;
 
 export const RentalCarLink = styled.a`
-  display: block;
+  display: inline-block;
   text-align: center;
   border-radius: 12px;
   padding: 12px 50px;
   width: 80px;
-  height: 44px;
   color: white;
   font-weight: 600;
   font-size: 14px;

@@ -119,8 +119,8 @@ const CarDetailsModal = ({ car }) => {
             Rental Price: <NumericValue>{rentalPrice}</NumericValue>
           </ConditionParagraph>
         </RentalConditions>
-        <RentalCarLink href="tel:+380730000000">Rental car</RentalCarLink>
       </RentalConditionsContainer>
+      <RentalCarLink href="tel:+380730000000">Rental car</RentalCarLink>
     </ModalBackdrop>
   );
 };
