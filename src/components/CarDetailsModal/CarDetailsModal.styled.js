@@ -106,6 +106,7 @@ export const ConditionParagraph = styled.p`
   font-size: 12px;
   line-height: 1.5;
   color: #363535;
+  background-color: #f9f9f9;
 `;
 
 export const NumericValue = styled.span`

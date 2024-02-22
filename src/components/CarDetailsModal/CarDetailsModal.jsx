@@ -77,7 +77,8 @@ const CarDetailsModal = ({ car }) => {
             </ConditionParagraph>
           ))}
           <ConditionParagraph>
-            Mileage: <NumericValue>{mileage}</NumericValue>
+            Mileage:{" "}
+            <NumericValue>{mileage.toLocaleString("en-US")}</NumericValue>
           </ConditionParagraph>
           <ConditionParagraph>
             Rental Price: <NumericValue>{rentalPrice}</NumericValue>

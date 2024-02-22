@@ -23,14 +23,7 @@ export const ModalContainer = styled.div`
   border-radius: 24px;
   background-color: white;
   max-width: 541px;
-  max-height: 752px;
-  height: 90vh;
   overflow: auto;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
 `;
 
 export const ModalContent = styled.div``;
