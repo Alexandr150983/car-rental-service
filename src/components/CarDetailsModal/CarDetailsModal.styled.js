@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as DividerSvg } from "../../assets/divider.svg";
 
 export const ModalBackdrop = styled.div``;
 export const CarImage = styled.img`
@@ -13,20 +14,12 @@ export const Model = styled.span`
   color: rgb(52, 112, 255);
 `;
 
-export const TitleContainer = styled.div`
+export const TitleOptions = styled.div`
   width: 461px;
   height: 126px;
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
-`;
-
-export const TitleOptions = styled.div`
-  width: 297px;
-  height: 72px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
 `;
 
 export const TitleModel = styled.div`
@@ -49,13 +42,12 @@ export const Description = styled.div`
   width: 461px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1, 43;
+  line-height: 1.43;
   color: #121417;
 `;
 
 export const DetailList = styled.div`
   width: 461px;
-  height: 68px;
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
@@ -133,4 +125,9 @@ export const RentalCarLink = styled.a`
   &:hover {
     background-color: rgb(11, 68, 205);
   }
+`;
+
+export const StyledDivider = styled(DividerSvg)`
+  margin: 0 6px;
+  height: 16px;
 `;
