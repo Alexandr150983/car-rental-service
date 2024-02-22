@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { ReactComponent as DividerSvg } from "../../assets/divider.svg";
 
-export const ModalBackdrop = styled.div``;
+export const ModalBackdrop = styled.div`
+  max-width: 541px;
+`;
+
 export const CarImage = styled.img`
   border-radius: 14px;
   margin-bottom: 14px;
@@ -85,7 +88,6 @@ export const RentalConditionsContainer = styled.div`
 
 export const RentalConditions = styled.div`
   width: 461px;
-  height: 72px;
   display: flex;
   flex-wrap: wrap;
 `;

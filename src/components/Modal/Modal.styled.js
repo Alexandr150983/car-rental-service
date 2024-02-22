@@ -23,10 +23,13 @@ export const ModalContainer = styled.div`
   border-radius: 24px;
   background-color: white;
   max-width: 541px;
+  height: 85%;
   overflow: auto;
 `;
 
-export const ModalContent = styled.div``;
+export const ModalContent = styled.div`
+  max-width: 541px;
+`;
 
 export const CloseButton = styled.button`
   background-color: transparent;
