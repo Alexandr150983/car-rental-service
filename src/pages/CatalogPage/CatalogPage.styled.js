@@ -44,3 +44,19 @@ export const CenteredLoader = styled.div`
   height: 100vh;
   width: 100%;
 `;
+
+export const FilterDropdown = styled.select`
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  &:hover {
+    border-color: #888;
+  }
+  &:focus {
+    outline: none;
+    border-color: #555;
+  }
+`;

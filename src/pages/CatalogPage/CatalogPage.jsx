@@ -12,10 +12,12 @@ import CarCard from "../../components/CarCard/CarCard";
 import {
   CarsWrapper,
   CenteredLoader,
+  FilterDropdown,
   LoadBtn,
   StyledCatalog,
 } from "./CatalogPage.styled";
 import Loader from "../../components/Loader/Loader";
+import makes from "../../data/makes.json";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -23,26 +25,40 @@ const CatalogPage = () => {
   const loading = useSelector(selectCarsLoading);
   const error = useSelector(selectCarsError);
   const favorites = useSelector(selectFavorites);
-  const [page, setPage] = useState(1);
-  const limit = 12;
+  const [visibleCars, setVisibleCars] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const [selectedMake, setSelectedMake] = useState("All");
   const [hasMore, setHasMore] = useState(true);
+  const limit = 12;
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await dispatch(fetchCars({ page, limit }));
-
-      if (response.payload.length < limit) {
-        setHasMore(false);
-      }
+      await dispatch(fetchCars());
+      setLoaded(true);
     };
 
     fetch();
-  }, [dispatch, page, limit]);
+  }, [dispatch]);
+
+  useEffect(() => {
+    const filteredCars =
+      selectedMake === "All"
+        ? cars
+        : cars.filter((car) => car.make === selectedMake);
+    setVisibleCars(filteredCars.slice(0, limit));
+    setHasMore(filteredCars.length > limit);
+  }, [cars, selectedMake, loaded, limit]);
 
   const handleLoadMore = () => {
-    if (hasMore) {
-      setPage((prevPage) => prevPage + 1);
-    }
+    const currentLength = visibleCars.length;
+    const nextCars =
+      selectedMake === "All"
+        ? cars
+        : cars.filter((car) => car.make === selectedMake);
+    const nextVisibleCars = nextCars.slice(0, currentLength + limit);
+    setVisibleCars(nextVisibleCars);
+
+    setHasMore(nextVisibleCars.length < nextCars.length);
   };
 
   const handleFavoriteToggle = (car) => {
@@ -56,6 +72,18 @@ const CatalogPage = () => {
       dispatch(addFavorite(car));
     }
   };
+
+  const handleMakeChange = (event) => {
+    setSelectedMake(event.target.value);
+
+    const filteredCars =
+      event.target.value === "All"
+        ? cars
+        : cars.filter((car) => car.make === event.target.value);
+    setVisibleCars(filteredCars.slice(0, limit));
+    setHasMore(filteredCars.length > limit);
+  };
+
   return (
     <StyledCatalog>
       {loading && (
@@ -66,8 +94,16 @@ const CatalogPage = () => {
       {!loading && (
         <>
           {error && <p>Error: {error}</p>}
+          <FilterDropdown onChange={handleMakeChange}>
+            <option value="All">All Makes</option>
+            {makes.map((make, index) => (
+              <option key={index} value={make}>
+                {make}
+              </option>
+            ))}
+          </FilterDropdown>
           <CarsWrapper>
-            {cars.map((car) => (
+            {visibleCars.map((car) => (
               <CarCard
                 key={car.id}
                 car={car}

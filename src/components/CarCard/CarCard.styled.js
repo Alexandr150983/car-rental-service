@@ -38,7 +38,6 @@ export const TitleContainer = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  height: 24px;
   margin-bottom: 8px;
 `;
 
